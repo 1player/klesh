@@ -1,0 +1,22 @@
+Virtual memory structure
+========================
+
+* Kernel area *
+0x00000000 - 0x00100000: DMA pages, ROM, etc. 	(identity mapped)
+0x00100000 - 0x00800000: kernel code+data 	(identity mapped)
+0x00800000 - 0x01000000: kernel heap
+0x01000000 - 0x02000000: kernel modules
+0x02000000 - 0x02400000: task page table access window
+0x02400000 - 0x02800000: page table access window (used to modify a page table of another task's page directory)
+0x02800000 - 0x50000000: memory mapped devices
+
+* User area *
+0x50000000 - 0x80000000: shared memory
+0x80000000 - 0xC0000000: DLL
+0xC0000000 - 0xE0000000: user code+data
+0xE0000000 - 0xF0000000: user heap
+0xF0000000 - 0xFFFFF000: user stack
+
+
+
+- identity mapped: virtual address corresponds to the same physical address

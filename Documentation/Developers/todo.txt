@@ -1,0 +1,6 @@
+* Add sanity check on memory mapping (linear and from the stack). Maybe only assert()
+* Map the kernel symbols
+* Load kernel ESP and SS on interrupts
+* Check the EIP if is correct for the parent process domain when creating a thread
+* Multiboot structure copy to a safe place and magic check
+* Add string length checking to string_compare

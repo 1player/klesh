@@ -1,0 +1,13 @@
+%.o: %.asm
+ifdef DEBUG
+	nasm -f elf -g -D DEBUG -o "$@" "$<"
+else
+	nasm -f elf -o "$@" "$<"
+endif
+
+%.o: %.c
+ifdef DEBUG
+	gcc -c -D DEBUG -nostdlib -nostdinc -gstabs+ -std=gnu99 -ffreestanding -I$(INCLUDE_DIR) -Wno-main -march=i586 -mpreferred-stack-boundary=2 -o "$@" "$<"
+else
+	gcc -c -O2 -nostdlib -nostdinc -std=gnu99 -ffreestanding -I$(INCLUDE_DIR) -Wno-main -march=i586 -mpreferred-stack-boundary=2 -o "$@" "$<"
+endif

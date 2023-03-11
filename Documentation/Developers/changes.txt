@@ -1,0 +1,45 @@
+Developers' Change log
+======================
+
+* 2005-05-16 - The Neuromancer
+
+	Done a heavy work on the multitasking subsystem and started the process loader thread. Details will follow.
+	Made changes on the memory manager and added some GCC extensions to function for stricter error checking.
+
+* 2005-05-11 - The Neuromancer
+
+	Reorganized the building structure and the SVN repository. Now kernel and applications have their own directory
+	and the kernel include files are separated from the SDK.
+
+* 2005-05-10 - The Neuromancer
+
+	Removed a bug in console_read which did not add a \0 character at the end of the read string.
+
+	The system is now able to load the ELF executable of the shell and run it. We must implement now syscalls
+	and a functional shell (waiting for Jack`).
+	
+	Minor changes and updates were made.
+
+* 2005-05-07 - The Neuromancer
+
+	The initialization is no more a bunch of messages written to the screen in a Linux-way, but now
+	a cool progress bar is used to provide a view of the initialization process.
+
+	The operating system has been renamed to Klesh.
+
+* 2005-05-03 - The Neuromancer
+
+	Found a bug on the floppy read routine which was waiting for 9 status data bytes at the end of the transfer
+	instead of 7, causing very low performance (timeouts).
+
+	The delay function has been replaced (actually, it still exists) by process_thread_sleep_time, which 
+	reschedules the process without locking the entire system and using 100% the CPU.
+	process_thread_sleep which was used to sleep the thread on an object has been renamed to process_thread_sleep_object.
+
+	Started the change log.
+
+	Started Nehemiah v0.0.3: the goal of this version is to have a functional Ext2 driver
+	which can read the shell from the disk, load it on memory and run it.
+	Other ideas are the change of the project name, the rewriting the driver structure
+	(put them in Startup/Drivers/* from Drivers/*) and to provide a easy to understand (and cool too)
+	view of the system loading.

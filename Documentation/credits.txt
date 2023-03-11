@@ -1,0 +1,9 @@
+Credits
+=======
+
+* The Neuromancer - <neuromancer at paranoici dot org>
+
+	Project director. Lead kernel coder.
+
+	Thanks to (no particular order): Red Hot Chili Peppers, Punkreas, Ska-P, Bob Marley, 
+		Pink Floyd, Guns N' Roses, The Clash. Ubuntu Linux. QEMU.
